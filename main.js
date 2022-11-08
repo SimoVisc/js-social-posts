@@ -83,7 +83,7 @@ for(let i=0; i<posts.length; i++){
             <div class="post__footer">
                 <div class="likes js-likes">
                    <div class="likes__cta">
-                      <a class="like-button  js-like-button" href="#" data-postid="1">
+                      <a class="like-button  js-like-button"  data-postid="${social.id}">
                          <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
                          <span class="like-button__label">Mi Piace</span>
                       </a>
@@ -98,7 +98,7 @@ for(let i=0; i<posts.length; i++){
 
 // Milestone 2 - Se clicchiamo sul tasto "Mi Piace" cambiamo il colore al testo del bottone e incrementiamo il counter dei likes relativo
 
-document.querySelector(".js-like-button").addEventListener("click", function colorFunction(){
+document.querySelector(".like-button").addEventListener("click", function colorFunction(){
     console.log(this);
     this.style.backgroundColor = "#0CD977"
 })
