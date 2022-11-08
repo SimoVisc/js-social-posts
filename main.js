@@ -63,7 +63,7 @@ for(let i=0; i < posts.length; i++){
    }
 };
 
-const postsContainer = document.querySelector(".posts-list")
+const postsContainer = document.querySelector(".posts-list");
 for(let i=0; i<posts.length; i++){
    const social= posts[i];
 
@@ -88,9 +88,7 @@ for(let i=0; i<posts.length; i++){
                          <span class="like-button__label">Mi Piace</span>
                       </a>
                     </div>
-                    <div class="likes__counter">
-                        "Piace a ${social.likes} persone"
-                    </div>
+                    <div class="likes__counter">Piace a ${social.likes} persone</div>
                 </div> 
             </div>            
         </div>`;
@@ -98,5 +96,11 @@ for(let i=0; i<posts.length; i++){
 }
 
 
-// Milestone 2 - Se clicchiamo sul tasto "Mi Piace" cambiamo il colore al testo del bottone e incrementiamo il counter dei likes relativo.
+// Milestone 2 - Se clicchiamo sul tasto "Mi Piace" cambiamo il colore al testo del bottone e incrementiamo il counter dei likes relativo
+
+document.querySelector(".js-like-button").addEventListener("click", function colorFunction(){
+    console.log(this);
+    this.style.backgroundColor = "#0CD977"
+})
+
 // Salviamo in un secondo array gli id dei post ai quali abbiamo messo il like.
