@@ -57,12 +57,45 @@ const posts = [
 ];
 // Milestone 1 - Prendendo come riferimento il layout di esempio presente nell'html, stampiamo i post del nostro feed
 for(let i=0; i < posts.length; i++){
-   const postsList = posts[i];
-   for(let key in postsList){
-     console.log(postsList[key])
+   const social = posts[i];
+   for(let key in social){
+     console.log(social[key])
    }
-}
+};
 
+const postsContainer = document.querySelector(".posts-list")
+for(let i=0; i<posts.length; i++){
+   const social= posts[i];
+
+   const postsList= `
+      <div class="post">
+            <div class="post__header">
+                <div class="post-meta">                    
+                    <div class="post-meta__icon"> ${social.media}</div>
+                    <div class="post-meta__data">
+                        <div class="post-meta__author"> ${social.author.name}</div>
+                        <div class="post-meta__time">${social.created}</div>
+                    </div>                    
+                </div>
+            </div>
+            <div class="post__text">${social.content}</div>
+            <div class="post__image">${social.author.image}</div>
+            <div class="post__footer">
+                <div class="likes js-likes">
+                   <div class="likes__cta">
+                      <a class="like-button  js-like-button" href="#" data-postid="1">
+                         <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
+                         <span class="like-button__label">Mi Piace</span>
+                      </a>
+                    </div>
+                    <div class="likes__counter">
+                        "Piace a ${social.likes} persone"
+                    </div>
+                </div> 
+            </div>            
+        </div>`;
+    postsContainer.innerHTML += postsList;
+}
 
 
 // Milestone 2 - Se clicchiamo sul tasto "Mi Piace" cambiamo il colore al testo del bottone e incrementiamo il counter dei likes relativo.
